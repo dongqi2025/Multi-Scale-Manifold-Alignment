@@ -1,7 +1,6 @@
 # Multi-Scale Manifold Alignment: A Unified Framework for Enhanced Explainability of Large Language Models
 
 ![Framework Overview](docs/figures/framework.png)  
-*Figure 1: Multi-Scale Manifold Alignment Framework*
 
 ## 🔍 Overview
 This repository presents **Multi-Scale Manifold Alignment (MSMA)**, a novel framework for interpreting and controlling Large Language Models (LLMs) by decomposing their latent spaces into hierarchically organized semantic manifolds. Our method bridges geometric and information-theoretic approaches to reveal how LLMs process language across scales—from word-level details to global discourse.
