@@ -62,6 +62,11 @@ Key observations:
 - Bidirectional encoders (BERT/RoBERTa) emphasize local processing (>40%)
 - Encoder-decoder (T5) shows compressed hierarchy with 50% local layers
 
+#### Code Repository  
+Details and code for this experiment are available at:  
+[`https://github.com/dongqi2025/Multi-Scale-Probabilistic-Generation-Theory.git`](https://github.com/dongqi2025/Multi-Scale-Probabilistic-Generation-Theory.git)  
+(Includes layer definition scripts, activation analysis, and visualization code.)
+
 ### 🔬 Intervention 
 
 #### Experimental Design
@@ -92,6 +97,13 @@ We conducted systematic interventions across semantic scales to validate functio
 | BERT   | Intermediate| Attention    | Robust structural preservation  |
 | XLM-R  | Global      | Noise        | Sentiment resilience (-14% Δ)   |
 
+
+#### Code Repository  
+Experimental code and data are available at:  
+[`https://github.com/dongqi2025/Multi-Scale-Probabilistic-Generation-Theory.git`](https://github.com/dongqi2025/Multi-Scale-Probabilistic-Generation-Theory.git)  
+(Includes hidden-state perturbation scripts, metric calculations, and configuration files.)  
+
+ 
 ### 🛠️ Alignment
 We validate MSMA through ablation studies with three key components:
 
