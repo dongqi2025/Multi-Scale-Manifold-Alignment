@@ -28,7 +28,23 @@ Key innovations:
 - **Model-Agnostic**: Works with GPT-2, BERT, RoBERTa, and T5 architectures
 
 ## 🚀 Quick Start
-*(This section will be populated with installation and usage instructions)*
+
+
+### Dependency Installation
+Ensure that all necessary dependency libraries are installed, such as `torch`, `numpy`, `matplotlib`, `seaborn`, etc. You can use the following command to install them:
+```bash
+pip install -r requirements.txt
+```
+
+### Experiment Startup Method
+#### Configure Experiment Parameters
+Open the `configs/default_config.yaml` file and modify the experiment parameters as needed, such as learning rate, number of training epochs, and device.
+
+#### Run the Experiment Script
+Run the following command in the terminal to start the experiment:
+```bash
+python experiments/run_experiment.py --config configs/default_config.yaml
+```
 
 ## 📊 Experimental Results
 Our framework demonstrates strong empirical performance:
@@ -47,21 +63,15 @@ Our framework demonstrates strong empirical performance:
 
 
 ## 📂 Repository Structure
-```
-.
-├── configs/            # Experiment configurations
-├── data/               # Sample datasets
-├── docs/               # Supplementary materials
-├── models/             # Pretrained model checkpoints
-├── scripts/            # Training/evaluation scripts
-├── src/
-│   ├── alignment/      # Cross-scale mapping modules
-│   ├── analysis/       # Interpretation tools
-│   ├── geometry/       # Manifold operations
-│   └── utils/          # Helper functions
-├── LICENSE
-└── README.md
-```
+This project adopts a structured code repository layout, primarily consisting of the following components:
+- `data/`: Used to store both raw data and processed data.
+- `models/`: Contains definitions of different models, such as model components related to BERT and GPT2.
+- `utils/`: Holds utility functions, including data loading, training record - keeping, and visualization functionalities.
+- `configs/`: Stores configuration files for experiments, allowing you to modify experimental parameters as needed.
+- `experiments/`: Contains the main scripts for experiments, used to initiate experiments.
+- `results/`: Used to save experiment results, including training metrics, validation metrics, and interpretability metrics.
+- `logs/`: Stores log files for experiments.
+-
 
 
 ## 🤝 Contributing
