@@ -1,0 +1,11 @@
+device: cuda
+learning_rate: 0.0001
+epochs: 10
+num_global_classes: 5
+num_intermediate_classes: 10
+num_local_classes: 20
+lambda_geo: 0.1
+lambda_info: 0.1
+lambda_curv: 0.01
+save_dir: results/bert_experiment
+model_path: /path/to/gpt2/model  # 仅用于GPT2模型
