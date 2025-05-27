@@ -50,10 +50,17 @@ python experiments/run_experiment.py --config configs/default_config.yaml
 Our framework demonstrates strong empirical performance:
 
 ### Semantic Layer Distribution
-| Model   | Local Layers | Intermediate Layers | Global Layers |
-|---------|-------------|---------------------|--------------|
-| GPT-2   | 0-2 (25%)   | 3-8 (50%)           | 9-12 (25%)   |
-| BERT    | 0-4 (42%)   | 5-8 (29%)           | 9-12 (29%)   |
+| Model    | Local Layers      | Intermediate Layers | Global Layers    |
+|----------|-------------------|---------------------|------------------|
+| **GPT-2**   | 0-2 (25%)        | 3-8 (50%)           | 9-12 (25%)       |
+| **BERT**    | 0-4 (42%)        | 5-8 (29%)           | 9-12 (29%)       |
+| **RoBERTa** | 0-4 (42%)        | 5-8 (29%)           | 9-12 (29%)       |
+| **T5**      | 0-2 (50%)        | 3-4 (33%)           | 5-6 (17%)        |
+
+Key observations:
+- Autoregressive models (GPT-2) allocate 50% layers to intermediate semantics
+- Bidirectional encoders (BERT/RoBERTa) emphasize local processing (>40%)
+- Encoder-decoder (T5) shows compressed hierarchy with 50% local layers
 
 ### Alignment Quality (BERT)
 | Method       | KL (G→I) | MI (G→I) | DC (G→I) |
