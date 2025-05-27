@@ -62,12 +62,59 @@ Key observations:
 - Bidirectional encoders (BERT/RoBERTa) emphasize local processing (>40%)
 - Encoder-decoder (T5) shows compressed hierarchy with 50% local layers
 
-### Alignment Quality (BERT)
-| Method       | KL (G→I) | MI (G→I) | DC (G→I) |
-|--------------|---------|---------|---------|
-| Baseline     | 403     | 0.06    | 0.87    |
-| Full MSMA    | **0.51**| **2.89**| **1.00**|
+### 🔬 Intervention 
 
+#### Experimental Design
+We conducted systematic interventions across semantic scales to validate functional specialization:
+- **Intervention Types**:
+  1. Translation: $\mathbf{h'} = \mathbf{h} + \Delta$
+  2. Scaling: $\mathbf{h'} = \alpha\mathbf{h}$ 
+  3. Gaussian Noise: $\mathbf{h'} = \mathbf{h} + \epsilon$
+  4. Attention Modification
+- **Evaluation Metrics**:
+  - Lexical diversity
+  - Sentence count
+  - Mean sentence length
+  - Max dependency depth  
+  - Discourse coherence
+  - Sentiment consistency
+#### Key Findings
+| Model  | Scale       | Intervention | Key Impact                     | Effect Size (δ) |
+|--------|-------------|--------------|--------------------------------|-----------------|
+| GPT-2  | **Global**  | Amplify      | +7.4% Lexical Diversity        | +0.23           |
+|        |             |              | -24% Coherence                 | -0.24           |
+|        | **Intermediate** | Scale   | +25% Sentence Count            | +0.24           |
+|        |             |              | -19% Mean Sentence Length      | -0.27           |
+|        | **Local**   | Amplify      | +34% Lexical Variation         | +0.34           |
+
+| Model  | Scale       | Intervention | Stability Observation          |
+|--------|-------------|--------------|---------------------------------|
+| BERT   | Intermediate| Attention    | Robust structural preservation  |
+| XLM-R  | Global      | Noise        | Sentiment resilience (-14% Δ)   |
+
+### 🛠️ Alignment
+We validate MSMA through ablation studies with three key components:
+
+**Ablation Settings**:
+| Configuration | Geometry | Information | Curvature | λ_geo | λ_info | λ_curv |
+|---------------|:--------:|:-----------:|:---------:|:-----:|:------:|:------:|
+| Full MSMA     |    ✓     |      ✓      |     ✓     |  0.1  |   0.1  |  0.01  |
+| No Geometry   |    ✗     |      ✓      |     ✓     |  0.0  |   0.1  |  0.01  |  
+| No Information|    ✓     |      ✗      |     ✓     |  0.1  |   0.0  |  0.01  |
+
+**Alignment Performance**:
+| Model  | Method       | KL Divergence ↓ | Mutual Info ↑ | Distance Corr →1 |
+|--------|--------------|----------------:|--------------:|-----------------:|
+| GPT-2  | Baseline     |          6,955  |          0.23 |             0.97 |
+|        | **Full MSMA**|             33  |          1.25 |             1.00 |
+| BERT   | Baseline     |            403  |          0.06 |             0.87 |
+|        | **Full MSMA**|           0.51  |          2.89 |             1.00 |
+
+Critical insights:
+1. **Multi-component Synergy**: Full MSMA achieves 99.5% KL reduction vs baseline
+2. **Architecture Matters**: BERT shows better alignability (KL=0.51 vs GPT-2's 33)
+3. **Curvature Regularization**: Prevents distortion (no-curv KL increases 18-32%)
+4. **Geometric Foundation**: Removing geometry degrades MI by 43-68%
 
 ## 📂 Repository Structure
 This project adopts a structured code repository layout, primarily consisting of the following components:
