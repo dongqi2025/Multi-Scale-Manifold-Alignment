@@ -1,4 +1,4 @@
-# Multi-Scale Manifold Alignment: A Unified Framework for Enhanced Explainability of Large Language Models
+# Multi-Scale Manifold Alignment: A Unified Framework for Enhanced Explainability of Large Language Models[![arXiv](https://img.shields.io/badge/arXiv-2505.20340-b31b1b.svg)](https://arxiv.org/abs/2505.20333)
 
 ![Framework Overview](docs/figures/framework.png)  
 
