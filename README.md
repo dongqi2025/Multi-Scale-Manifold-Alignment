@@ -151,7 +151,15 @@ We welcome contributions! Please open an issue or submit a PR for:
 ## 📜 Citation
 If you use this work, please cite our paper:
 ```bibtex
-
+@misc{zhang2025multiscalemanifoldalignmentunified,
+      title={Multi-Scale Manifold Alignment: A Unified Framework for Enhanced Explainability of Large Language Models}, 
+      author={Yukun Zhang and Qi Dong},
+      year={2025},
+      eprint={2505.20333},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2505.20333}, 
+}
 ```
 
 ## ✉️ Contact
